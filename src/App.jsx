@@ -8,6 +8,7 @@ const locations = [
     name: "Erode",
     state: "Tamil Nadu",
     district: "Erode",
+    status: "Normal",
     level: "12.5 m",
     position: [11.341, 77.717]
   },
@@ -15,6 +16,7 @@ const locations = [
     name: "Chennai",
     state: "Tamil Nadu",
     district: "Chennai",
+    status: "Warning",
     level: "11.2 m",
     position: [13.0827, 80.2707]
   },
@@ -22,6 +24,7 @@ const locations = [
     name: "Bengaluru",
     state: "Karnataka",
     district: "Bengaluru Urban",
+    status: "Warning",
     level: "15.3 m",
     position: [12.9716, 77.5946]
   },
@@ -29,6 +32,7 @@ const locations = [
     name: "Hyderabad",
     state: "Telangana",
     district: "Hyderabad",
+    status: "Critical",
     level: "16.2 m",
     position: [17.3850, 78.4867]
   }
@@ -68,8 +72,8 @@ function App() {
             <li>About</li>
           </ul>
 
-          <br />
-
+         <br />
+          
           <h3>Filter by State</h3>
 
           <select
@@ -82,6 +86,28 @@ function App() {
               </option>
             ))}
           </select>
+          <br />
+          <br />
+
+          <h3>Statistics</h3>
+          <p>Total Locations: {filteredLocations.length}</p>
+          <p>
+  Normal Areas: {
+    filteredLocations.filter(loc => loc.status === "Normal").length
+  }
+</p>
+
+<p>
+  Warning Areas: {
+    filteredLocations.filter(loc => loc.status === "Warning").length
+  }
+</p>
+
+<p>
+  Critical Areas: {
+    filteredLocations.filter(loc => loc.status === "Critical").length
+  }
+</p>
         </aside>
 
         <main className="map-section">
@@ -107,6 +133,8 @@ function App() {
 
                   <br />
                   Groundwater Level: {location.level}
+                  <br />
+                  status: {location.status}
                 </Popup>
               </Marker>
             ))}

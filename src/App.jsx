@@ -15,15 +15,37 @@ const states = [
   "Delhi",
   "West Bengal"
 ];
+const districtsByState = {
+  "Tamil Nadu": ["All", "Chennai", "Erode"],
+  "Karnataka": ["All", "Bengaluru Urban"],
+  "Telangana": ["All", "Hyderabad"],
+  "Maharashtra": ["All", "Mumbai"],
+  "Delhi": ["All", "New Delhi"],
+  "West Bengal": ["All", "Kolkata"]
+};
 function App() {
+ 
   const [selectedState, setSelectedState] = useState("All");
+  const [selectedDistrict, setSelectedDistrict] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
+const filteredLocations = locations.filter((location) => {
+  const matchesState =
+    selectedState === "All" ||
+    location.state === selectedState;
 
-  const filteredLocations =
-    selectedState === "All"
-      ? locations
-      : locations.filter(
-          (location) => location.state === selectedState
-        );
+    const matchesDistrict =
+  selectedDistrict === "All" ||
+  location.district === selectedDistrict;
+
+return matchesState && matchesDistrict && matchesSearch;
+
+  const matchesSearch =
+    location.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+
+  return matchesState && matchesDistrict && matchesSearch;
+});
 
   return (
     <div className="app">
@@ -33,6 +55,12 @@ function App() {
 
       <div className="main-content">
         <aside className="sidebar">
+          <input
+  type="text"
+  placeholder="Search location..."
+  value={searchTerm}
+  onChange={(e) => setSearchTerm(e.target.value)}
+/>
           <h3>Dashboard</h3>
 
           <ul>

@@ -2,49 +2,16 @@ import { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./App.css";
+import groundwaterData from "./data/GroundwaterData";
 
-const locations = [
-  {
-    name: "Erode",
-    state: "Tamil Nadu",
-    district: "Erode",
-    status: "Normal",
-    level: "12.5 m",
-    position: [11.341, 77.717]
-  },
-  {
-    name: "Chennai",
-    state: "Tamil Nadu",
-    district: "Chennai",
-    status: "Warning",
-    level: "11.2 m",
-    position: [13.0827, 80.2707]
-  },
-  {
-    name: "Bengaluru",
-    state: "Karnataka",
-    district: "Bengaluru Urban",
-    status: "Warning",
-    level: "15.3 m",
-    position: [12.9716, 77.5946]
-  },
-  {
-    name: "Hyderabad",
-    state: "Telangana",
-    district: "Hyderabad",
-    status: "Critical",
-    level: "16.2 m",
-    position: [17.3850, 78.4867]
-  }
-];
 
+const locations = groundwaterData;
 const states = [
   "All",
   "Tamil Nadu",
   "Karnataka",
   "Telangana"
 ];
-
 function App() {
   const [selectedState, setSelectedState] = useState("All");
 

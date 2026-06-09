@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./App.css";
-import groundwaterData from "./data/GroundwaterData";
+import groundwaterData from "./data/groundwaterData.json";
 
 
 const locations = groundwaterData;
@@ -10,7 +10,10 @@ const states = [
   "All",
   "Tamil Nadu",
   "Karnataka",
-  "Telangana"
+  "Telangana",
+  "Maharashtra",
+  "Delhi",
+  "West Bengal"
 ];
 function App() {
   const [selectedState, setSelectedState] = useState("All");

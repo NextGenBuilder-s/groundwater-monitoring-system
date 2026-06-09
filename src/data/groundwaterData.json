@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Erode",
+    "state": "Tamil Nadu",
+    "district": "Erode",
+    "level": "12.5 m",
+    "status": "Normal",
+    "position": [11.341, 77.717]
+  },
+  {
+    "name": "Chennai",
+    "state": "Tamil Nadu",
+    "district": "Chennai",
+    "level": "11.2 m",
+    "status": "Warning",
+    "position": [13.0827, 80.2707]
+  },
+{
+  "name": "Hyderabad",
+  "state": "Telangana",
+  "district": "Hyderabad",
+  "level": "16.2 m",
+  "status": "Critical",
+  "position": [17.3850, 78.4867]
+},
+{
+  "name": "Mumbai",
+  "state": "Maharashtra",
+  "district": "Mumbai",
+  "level": "9.7 m",
+  "status": "Warning",
+  "position": [19.0760, 72.8777]
+},
+{
+  "name": "New Delhi",
+  "state": "Delhi",
+  "district": "New Delhi",
+  "level": "17.1 m",
+  "status": "Critical",
+  "position": [28.6139, 77.2090]
+},
+{
+  "name": "Kolkata",
+  "state": "West Bengal",
+  "district": "Kolkata",
+  "level": "7.6 m",
+  "status": "Normal",
+  "position": [22.5726, 88.3639]
+}
+]
